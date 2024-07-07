@@ -4,6 +4,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:package_eample/screen/about_us_screen.dart';
 
+import 'calculation_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -54,6 +56,20 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          switch (value) {
+            case 0:
+              break;
+            case 1:
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => CalculationScreen()));
+              break;
+            case 2:
+              break;
+            case 3:
+              break;
+          }
+        },
         backgroundColor: Colors.pink,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -64,10 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
+              Icons.calculate,
               color: Colors.green,
             ),
-            label: 'Search',
+            label: 'Calculate',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person, color: Colors.amber),
